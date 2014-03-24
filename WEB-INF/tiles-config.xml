@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="innAdminPage" template="/view/innAdminPage.jsp">
+		<put-attribute name="inn.cssResources" value="/tilesRef/cssDefn.jsp" />
+		<put-attribute name="inn.jsResources" value="/tilesRef/jsDefn.jsp" />
+		<put-attribute name="inn.header" value="/exceptbody/header.jsp" />
+		<put-attribute name="inn.leftStrip" value="/exceptbody/leftStrip.jsp" />
+		<put-attribute name="inn.footer" value="/exceptbody/footer.jsp" />
+	</definition>
+	<definition name="revealCibos" extends="innAdminPage" > <!--template="/view/revealCibos.jsp" extends="innAdminPage" -->
+	
+	</definition>
+</tiles-definitions>

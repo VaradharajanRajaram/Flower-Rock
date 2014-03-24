@@ -1,0 +1,18 @@
+.leftsidestrip {
+	position: fixed;
+	top: 51px;
+	width: 89px;
+	padding-left: 20px;
+	background-color: rgb(240, 237, 237);
+	height: 100%;
+}
+
+.nav bs-docs-sidenav {
+	padding-top: 55px;
+	margin-bottom: 0;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
