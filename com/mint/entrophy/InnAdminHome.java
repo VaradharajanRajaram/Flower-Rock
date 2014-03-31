@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class InnAdminHome {
-
     @RequestMapping(value = "/")
     public String adminPage() {
         System.out.println("-()-()-()-()-()-()-()-(\"STARTUP\")-()-()-()-()-()-()-()");
