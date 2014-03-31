@@ -7,8 +7,13 @@
 <tiles:insertAttribute name="inn.jsResources" />
 <body>
 	<tiles:insertAttribute name="inn.header" />
+	<div class="clear_both"></div>
+	<!-- <div class="banner_wrapper">
+	<div class="banner_holder">
+      </div>
 	
-	<tiles:insertAttribute name="inn.leftStrip" />
+</div> -->
+	<%-- <tiles:insertAttribute name="inn.leftStrip" /> --%>
 	<!-- <h3>Hello</h3> -->
 	<tiles:insertAttribute name="inn.footer" />
 </body>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
 	<!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
 	<div class="container-fluid">
 		 <!-- <div class="navbar-header">
