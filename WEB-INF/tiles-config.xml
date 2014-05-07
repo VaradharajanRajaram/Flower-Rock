@@ -10,7 +10,6 @@
 		<put-attribute name="inn.leftStrip" value="/exceptbody/leftStrip.jsp" />
 		<put-attribute name="inn.footer" value="/exceptbody/footer.jsp" />
 	</definition>
-	<definition name="revealCibos" extends="innAdminPage" > <!--template="/view/revealCibos.jsp" extends="innAdminPage" -->
-	
-	</definition>
+	<definition name="revealCibos" extends="innAdminPage"/> <!--template="/view/revealCibos.jsp" extends="innAdminPage" -->
+	 <definition name="uploadExcel" template="/view/uploadExcel.jsp"/>
 </tiles-definitions>

@@ -64,7 +64,7 @@ font-size: 23px;
  .global_nav ul li a { color: rgb(7, 7, 7);
 text-decoration: none;
 font-size: 18px; } 
-.global_nav ul li:hover, .global_nav ul li a:hover,.global_nav ul li.active a { color:#6bbee8;  }
+.global_nav ul li:hover, .global_nav ul li a:hover,.global_nav ul li.active a { color:rgb(247, 248, 248);  }
 .global_nav ul li a.active{ font-weight:600 !important; color:#4c4c4c !important; }
 
 #core_value .footer ul li.core_value a, #contact .footer ul li.contact a, #aboutus .footer ul li.aboutus a { color:#979797 !important;}
@@ -1303,7 +1303,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
 	line-height: 1;
 	color: black;
-	background: white;
+	 background: white; 
+	
+   /*  background-color: rgb(17, 207, 146); */
+	
 }
 ol, ul {
 	list-style: none;
