@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="com"/>
+	<classpathentry kind="src" path="grubpost"/>
 	<classpathentry kind="lib" path="D:/software/Tomcat70/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="D:/software/Tomcat70/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging.jar"/>
