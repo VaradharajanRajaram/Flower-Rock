@@ -7,12 +7,20 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
     </init-param>
-<!--     <load-on-startup>0</load-on-startup> -->
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+	<servlet>
+		<servlet-name>ResumeProject</servlet-name>
+		<servlet-class>com.vail.foodcourt.service.ResumeProject</servlet-class>
+			<load-on-startup>2</load-on-startup>
+		
+	</servlet>
+  
 <!-- <welcome-file-list>
 <welcome-file>view/checkSpring.jsp</welcome-file>
 </welcome-file-list> -->

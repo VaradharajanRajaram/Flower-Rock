@@ -28,7 +28,16 @@
 			<value>views-en</value>
 		</property>
 	</bean>
-	
+	<!-- <context:property-placeholder location="classpath:resumeProject.properties"/> -->
+	 <bean id="appProperties"
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+        <list>
+            <value>classpath:resumeProject.properties</value>
+        </list>
+    </property>
+    <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        </bean> 
 	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 		<property name="prefix" value="/view/" /> <property name="suffix" value=".jsp" 
 		/> <property name="order" value="1" /> </bean> -->
