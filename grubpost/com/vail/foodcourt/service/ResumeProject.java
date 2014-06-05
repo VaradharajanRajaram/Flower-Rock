@@ -12,13 +12,14 @@ public class ResumeProject extends HttpServlet {
      * 
      */
     private static final long serialVersionUID = 1L;
-    String name;
-    @Value("${installPath}")
+    
+    @Value("${appspot.domain.name}")
     String installPath;
+   
     public void init(ServletConfig config){
        
-        System.out.println(installPath);
-        System.out.println(name);
+        System.out.println("value of install path" +installPath);
+        System.out.println("calling one");
     }
     
    

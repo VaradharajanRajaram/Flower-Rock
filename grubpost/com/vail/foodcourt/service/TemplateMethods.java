@@ -57,7 +57,7 @@ public class TemplateMethods {
             HSSFWorkbook workbook = new HSSFWorkbook(ios);
             HSSFSheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.rowIterator();
-            columndata = new ArrayList<>();
+            columndata = new ArrayList<String>();
             while (rowIterator.hasNext()) {
                 HSSFRow row = (HSSFRow) rowIterator.next();
                 Iterator<Cell> cellIterator = row.cellIterator();
