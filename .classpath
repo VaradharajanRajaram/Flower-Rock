@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="grubpost"/>
-	<classpathentry kind="lib" path="D:/software/Tomcat70/lib/jsp-api.jar"/>
-	<classpathentry kind="lib" path="D:/software/Tomcat70/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/org.springframework.aop-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/org.springframework.asm-3.0.5.RELEASE.jar"/>
@@ -65,5 +63,7 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/dom4j-1.6.1-sources.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/dom4j.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat 7.0/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat 7.0/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

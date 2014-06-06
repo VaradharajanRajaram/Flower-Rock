@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans.xsd  
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:component-scan base-package="com.vail.foodcourt" />
 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
@@ -28,16 +28,17 @@
 			<value>views-en</value>
 		</property>
 	</bean>
-	<!-- <context:property-placeholder location="classpath:resumeProject.properties"/> -->
-	 <bean id="appProperties"
+	<!--  <context:property-placeholder location="classpath:resumeapplicatin.properties"/> --> 
+	  <!-- <bean id="appProperties"
     class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="locations">
         <list>
-            <value>classpath:resumeProject.properties</value>
+            <value>classpath:resumeApplication.properties</value>
         </list>
     </property>
-    <property name="ignoreUnresolvablePlaceholders" value="true"/>
-        </bean> 
+    
+        </bean> --> 
+        <!-- <util:properties id="propSource" location="classpath:resumeApplication.properties" /> -->
 	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 		<property name="prefix" value="/view/" /> <property name="suffix" value=".jsp" 
 		/> <property name="order" value="1" /> </bean> -->

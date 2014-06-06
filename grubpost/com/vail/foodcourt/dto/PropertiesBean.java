@@ -1,12 +1,14 @@
 package com.vail.foodcourt.dto;
 
-import org.springframework.stereotype.Component;
 
-@Component
+
 public class PropertiesBean {
-   
-
-       
-    
+	
+	public PropertiesBean() {
+		
+		System.out.println("calling at propertiesbean");
+	}
+	
+	   
 
 }

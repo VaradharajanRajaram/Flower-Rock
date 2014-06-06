@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -34,6 +35,36 @@ public class TemplateMethods {
             builder.append(GeneralConstants.ALPHA_NUMERIC_STRING.charAt(character));
         }
         return builder.toString();
+    }
+    /**
+     * Returns a reference to a file with the specified name that is located
+     * somewhere on the classpath.
+     */
+    public static File findFileOnClassPath(final String fileName) {
+
+System.out.println("calling methods");
+  final String classpath = System.getProperty("java.class.path");
+  final String pathSeparator = System.getProperty("path.separator");
+  final StringTokenizer tokenizer = new StringTokenizer(classpath, pathSeparator);
+  while (tokenizer.hasMoreTokens()) {
+final String pathElement = tokenizer.nextToken();
+final File directoryOrJar = new File(pathElement);
+final File absoluteDirectoryOrJar = directoryOrJar.getAbsoluteFile();
+if (absoluteDirectoryOrJar.isFile()) {
+    final File target = new File(absoluteDirectoryOrJar.getParent(), fileName);
+    if (target.exists()) {
+  return target;
+    }
+} else {
+final File target = new File(directoryOrJar, fileName);
+if (target.exists()) {
+ return target;
+    }
+}
+  }
+
+  return null;
+    
     }
 
     public static JSONObject extractExcelContentByColumnIndex(int columnIndex, HashMap<String, String> foodMnuMap) {
