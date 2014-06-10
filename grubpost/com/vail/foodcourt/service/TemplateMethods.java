@@ -124,7 +124,7 @@ if (target.exists()) {
         return foodMenuJson;
     }
     public static Properties readPropertyFleFrmClsPth(String propertyFileName) {
-    	Properties folderCreationproperties=null;
+    	Properties folderCreationproperties = new Properties();
     	try {
 			
 			InputStream inputStream = TemplateMethods.class.getClass().getClassLoader()
@@ -133,7 +133,7 @@ if (target.exists()) {
 				throw new FileNotFoundException("property file '"
 						+ propertyFileName + "' not found in the classpath");
 			}
-			folderCreationproperties = new Properties();
+			
 			folderCreationproperties.load(inputStream);
 			
 		} catch (IOException e) {

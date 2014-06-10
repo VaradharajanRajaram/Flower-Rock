@@ -16,7 +16,7 @@ public class ResumeProject extends HttpServlet {
      */
 
 	private static final long serialVersionUID = 1L;
-	Properties folderCreationproperties=null;
+	Properties folderCreationproperties;
 	public void init(ServletConfig config) {
 		folderCreationproperties=TemplateMethods.readPropertyFleFrmClsPth("resumeApplication.properties");
 		
