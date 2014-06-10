@@ -16,38 +16,22 @@ public class ResumeProject extends HttpServlet {
      */
 
 	private static final long serialVersionUID = 1L;
-	Properties folderCreationproperties;
+	Properties folderCreationproperties=null;
 	public void init(ServletConfig config) {
-		readPropertiesFile("resumeApplication.properties");
+		folderCreationproperties=TemplateMethods.readPropertyFleFrmClsPth("resumeApplication.properties");
+		
 		folderProducePool();
 		resumeLogger();
 	}
 
-	public void readPropertiesFile(String propertyFileName) {
-		try {
-			InputStream inputStream = this.getClass().getClassLoader()
-					.getResourceAsStream(propertyFileName);
-			if (inputStream == null) {
-				throw new FileNotFoundException("property file '"
-						+ propertyFileName + "' not found in the classpath");
-			}
-			folderCreationproperties = new Properties();
-			folderCreationproperties.load(inputStream);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
+	
 	public void folderProducePool(){
-		folderProduce("resumeProjectLog");
-		folderProduce("coreLog");
-		folderProduce("dbLog");
-		folderProduce("dataRetriveLog");
-		folderProduce("xml");
-		
+		String[] folderName={"resumeProjectLog","coreLog","dbLog","dataRetriveLog","xml"};
+		for(int m=0;m<folderName.length;m++)
+		folderProduce(folderName[m]);
 	}
 	public void folderProduce(String folderName){
-		File folder=new File(folderCreationproperties.getProperty("foodCourtApp")+GeneralConstants.FRONT_SLASH+folderName);
+		File folder=new File(folderCreationproperties.getProperty("foodCourtAppLogPath")+GeneralConstants.FRONT_SLASH+folderName);
 		if(!folder.exists())
 		folder.mkdir();
 	}

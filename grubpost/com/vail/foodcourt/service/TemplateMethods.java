@@ -2,10 +2,14 @@ package com.vail.foodcourt.service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 import java.util.StringTokenizer;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -16,7 +20,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.json.JSONObject;
 
-public class TemplateMethods {
+public  final class  TemplateMethods {
 
     @SuppressWarnings("unused")
     private static final String getExtension(final String filename) {
@@ -119,5 +123,23 @@ if (target.exists()) {
         }
         return foodMenuJson;
     }
+    public static Properties readPropertyFleFrmClsPth(String propertyFileName) {
+    	Properties folderCreationproperties=null;
+    	try {
+			
+			InputStream inputStream = TemplateMethods.class.getClass().getClassLoader()
+					.getResourceAsStream(propertyFileName);
+			if (inputStream == null) {
+				throw new FileNotFoundException("property file '"
+						+ propertyFileName + "' not found in the classpath");
+			}
+			folderCreationproperties = new Properties();
+			folderCreationproperties.load(inputStream);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return folderCreationproperties;
+	}
 
 }
