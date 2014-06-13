@@ -123,17 +123,16 @@ if (target.exists()) {
         }
         return foodMenuJson;
     }
-    public static Properties readPropertyFleFrmClsPth(String propertyFileName) {
-    	Properties folderCreationproperties = new Properties();
+   public static Properties readPropertyFleFrmClsPth(String propertyFileName) {
+    	Properties folderCreationproperties = null;
     	try {
-			
-			InputStream inputStream = TemplateMethods.class.getClass().getClassLoader()
-					.getResourceAsStream(propertyFileName);
+			System.out.println(propertyFileName);
+			InputStream inputStream = ResumeProject.class.getResourceAsStream(propertyFileName);
 			if (inputStream == null) {
 				throw new FileNotFoundException("property file '"
 						+ propertyFileName + "' not found in the classpath");
 			}
-			
+			folderCreationproperties=new Properties();
 			folderCreationproperties.load(inputStream);
 			
 		} catch (IOException e) {

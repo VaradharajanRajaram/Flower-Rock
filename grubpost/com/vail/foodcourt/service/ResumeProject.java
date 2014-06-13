@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
 public class ResumeProject extends HttpServlet {
@@ -16,10 +17,11 @@ public class ResumeProject extends HttpServlet {
      */
 
 	private static final long serialVersionUID = 1L;
-	Properties folderCreationproperties;
-	public void init(ServletConfig config) {
-		folderCreationproperties=TemplateMethods.readPropertyFleFrmClsPth("resumeApplication.properties");
-		
+	Properties folderCreationproperties=null;
+	public void init(ServletConfig config)throws ServletException {
+		super.init(config);
+		folderCreationproperties=new Properties();
+		folderCreationproperties=TemplateMethods.readPropertyFleFrmClsPth("/resumeApplication.properties");
 		folderProducePool();
 		resumeLogger();
 	}
@@ -38,7 +40,6 @@ public class ResumeProject extends HttpServlet {
 	public void resumeLogger(){
 		Properties logFilesProp=new Properties();
 		logFilesProp.put("log4j.appender.APPL_LOG.File", "");
-		
 	}
 	
 	
