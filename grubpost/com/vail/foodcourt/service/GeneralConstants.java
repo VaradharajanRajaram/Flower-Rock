@@ -6,7 +6,8 @@ public class GeneralConstants {
     public static final String ALPHA_NUMERIC_STRING = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
 
     
-
+     public static final String foodCourtInstallPath="E:/foodCourtAppLogPath";
+    
 
         /** The Constant EMPTY_STRING. */
         public static final String EMPTY_STRING = "";
@@ -58,6 +59,21 @@ public class GeneralConstants {
 
         /** The Constant EXECUTION_LOGGER. */
         public static final String EXECUTION_LOGGER = "EXECUTION_LOGGER";
+        
+        
+        public static final String $CORE_LOG=foodCourtInstallPath+FRONT_SLASH+"coreLog/core.log";
+        		
+        
+        public static final String $DATA_RETRIVE_LOG=foodCourtInstallPath+FRONT_SLASH+"dataRetriveLog/data_rtve.log";
+        
+        public static final String $DB_LOG=foodCourtInstallPath+FRONT_SLASH+"dbLog/db.log";
+        
+        public static final String $RESUM_PROJECT_LOG=foodCourtInstallPath+FRONT_SLASH+"resumeProjectLog/start_app.log";
+        
+        
+        public static final String $MONGO_PROPERTIEFILE=foodCourtInstallPath+FRONT_SLASH+"propertie_Files/databasemongo.properties";
+        
+        
     
 
     

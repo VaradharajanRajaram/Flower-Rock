@@ -4,13 +4,13 @@ import java.sql.Date;
 
 public class GrubPropertiesBean {
 
-    private Integer grubId;
+    private int grubId;
 
-    private Integer grubsCustId;
+    private int grubsCustId;
 
     private String grubType;
 
-    private Integer grubCost;
+    private int grubCost;
 
     private String grubImage;
 
