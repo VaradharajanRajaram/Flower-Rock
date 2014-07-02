@@ -1,18 +1,33 @@
 package com.vail.foodcourt.service;
 
 import java.util.Properties;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
+
+import com.mongodb.Mongo;
+import com.mongodb.WriteConcern;
 
 public class DbPrerequisite  {
 	
 	private static final Logger log=Logger.getLogger(new Object() { }.getClass().getSimpleName());
 	public static String HOST = "localhost";
+	public static String URL = "mongodb://localhost:27017";
 	public static Integer PORT = 27017;
 	public static String DB = "mongodb";
 	public static String COLLECTION_MEASURINGS = "measurings";
 	public static String COLLECTION_STATIONS = "stations";
 	public static Integer BUFFER_SIZE = 20000;
+	/** Used to include a field in a response. */
+     static final Integer INCLUDE = Integer.valueOf(1);
+    /** Count the number of times initialized to teardown on the last {@link #cleanup()}. */
+	static final AtomicInteger initCount = new AtomicInteger(0);
+	  /** The default write concern for the test. */
+	 static WriteConcern writeConcern;
+	 public static Mongo mongo;
+	 public static String WRITECONCERNTYPE;
+	 
+	 public static Integer MAXCONNECTIONS;
 	/**
 	 * DataTypes used in the time series data
 	 * 
@@ -113,7 +128,10 @@ public class DbPrerequisite  {
 			// mongodb connection
 			HOST = properties.getProperty("mongodb.host");
 			PORT = Integer.parseInt(properties.getProperty("mongodb.port"));
+			URL=properties.getProperty("mongodb.url");
 			DB = properties.getProperty("mongodb.db");
+			WRITECONCERNTYPE=properties.getProperty("mongodb.writeConcern");
+			MAXCONNECTIONS=Integer.parseInt(properties.getProperty("mongodb.maxconnections"));
 			COLLECTION_MEASURINGS = properties
 					.getProperty("mongodb.collection.measurings");
 			COLLECTION_STATIONS = properties

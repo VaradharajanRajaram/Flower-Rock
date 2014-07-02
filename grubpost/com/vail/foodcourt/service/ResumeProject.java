@@ -67,14 +67,13 @@ private static final Logger log=Logger.getLogger(ResumeProject.class);
 	}
 	public void resumeMongoInstance(){
 		try{
-		DbResumeServices eval = new DbResumeServices();
 		DbPrerequisite.initConfig(GeneralConstants.$MONGO_PROPERTIEFILE);
-		
-		Mongo m=eval.initDatabase(DbPrerequisite.PATH);
+		DbResumeServices.startDataBase();
+	/*	Mongo m=eval.initDatabase(DbPrerequisite.PATH);
 		DB db=m.getDB(DbPrerequisite.DB);
 		DBCollection collection=db.getCollection("tree");
 		System.out.println(db.getCollection("tree"));
-		System.out.println(m.getMaxBsonObjectSize());
+		System.out.println(m.getMaxBsonObjectSize());*/
 		
 		}catch(Exception io){
 			

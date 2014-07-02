@@ -66,6 +66,6 @@
 	<classpathentry kind="lib" path="C:/Tomcat 7.0/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="C:/Tomcat 7.0/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/openid4java-0.9.5.593-gaehacks.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/mongo-2.10.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mongo-2.10.1.jar" sourcepath="C:/Users/Varadharajan/.m2/repository/org/mongodb/mongo-java-driver/2.10.1/mongo-java-driver-2.10.1-sources.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
