@@ -1,4 +1,13 @@
-package com.vail.foodcourt.service;
+
+/**
+ * 
+Coded By: Varadharajan Rajaram
+
+Coded Date: Jul 9, 2014 
+
+Coded Time: 7:20:02 AM
+
+ */package com.vail.foodcourt.service;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -11,11 +20,12 @@ import org.apache.log4j.Logger;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
-import com.mongodb.DBAddress;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
-import com.mongodb.MongoOptions;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.ServerAddress;
 import com.mongodb.WriteConcern;
 import com.vail.foodcourt.database.DBException;
 import com.vail.foodcourt.database.MongoDB_Queries;
@@ -30,7 +40,7 @@ public class DbResumeServices {
 	/**
 	 * Reference to the database containing the collections
 	 */
-	private DB db;
+	private static DB db;
 
 	
 	/**
@@ -64,7 +74,7 @@ public class DbResumeServices {
 		return mongoInstance;
 	}
 
-	public DB getDb() {
+	public static DB getDb() {
 		return db;
 	}
 
@@ -98,7 +108,7 @@ public class DbResumeServices {
 	 */
 
 	public static void startDataBase() {
-		com.mongodb.DB db = null;
+		
 		DbPrerequisite.initCount.incrementAndGet();
 		synchronized (DbPrerequisite.INCLUDE) {
 			if (DbPrerequisite.mongo != null) {
@@ -137,14 +147,19 @@ public class DbResumeServices {
 			// need to append db to url.
 			DbPrerequisite.URL += "/" + DbPrerequisite.DB;
 			System.out.println("new database url = " + url);
-			MongoOptions options = new MongoOptions();
-			options.connectionsPerHost = DbPrerequisite.MAXCONNECTIONS;
 			
-			DbPrerequisite.mongo = new Mongo(new DBAddress(DbPrerequisite.URL), options);
+			
+			MongoClientOptions options=new MongoClientOptions.Builder().connectionsPerHost(DbPrerequisite.MAXCONNECTIONS).build();
+				
+			//options.connectionsPerHost = DbPrerequisite.MAXCONNECTIONS;
+			
+			//DbPrerequisite.mongo = (MongoClient) new Mongo(new DBAddress(DbPrerequisite.URL), options);
+			DbPrerequisite.mongo=new MongoClient(new ServerAddress("localhost",27017),options);
 			db = DbPrerequisite.mongo.getDB(DbPrerequisite.DB);
+			db.requestEnsureConnection();
 			db.requestStart();
 			System.out.println("mongo connection created with " + url);
-		} catch (Exception e1) {
+		} catch  (Exception e1) {
 			System.err
 					.println("Could not initialize MongoDB connection pool for Loader: "
 							+ e1.toString());

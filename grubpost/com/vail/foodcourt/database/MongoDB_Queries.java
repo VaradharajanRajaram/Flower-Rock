@@ -16,12 +16,7 @@ import com.vail.foodcourt.service.DbPrerequisite.DataType;
 
 
 
-/**
- * A collection of MongoDB Queries on timeseries data.
- * 
- * @author s1ck
- * 
- */
+
 public class MongoDB_Queries {
 
 	private static Random r;

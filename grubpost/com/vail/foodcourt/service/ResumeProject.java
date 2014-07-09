@@ -10,12 +10,7 @@ import javax.servlet.http.HttpServlet;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.mongodb.DB;
 import com.mongodb.DBCollection;
-import com.mongodb.DBConnector;
-import com.mongodb.DBObject;
-import com.mongodb.Mongo;
-import com.mongodb.tools.ConnectionPoolStat;
 
 public class ResumeProject extends HttpServlet {
 
@@ -24,6 +19,7 @@ public class ResumeProject extends HttpServlet {
      */
 private static final Logger log=Logger.getLogger(ResumeProject.class);
 	private static final long serialVersionUID = 1L;
+	
 	Properties folderCreationproperties=null;
 	public void init(ServletConfig config)throws ServletException {
 		super.init(config);
@@ -69,6 +65,9 @@ private static final Logger log=Logger.getLogger(ResumeProject.class);
 		try{
 		DbPrerequisite.initConfig(GeneralConstants.$MONGO_PROPERTIEFILE);
 		DbResumeServices.startDataBase();
+		DBCollection collection=DbResumeServices.getDb().getCollection("chainsys");
+		collection.getStats();
+		
 	/*	Mongo m=eval.initDatabase(DbPrerequisite.PATH);
 		DB db=m.getDB(DbPrerequisite.DB);
 		DBCollection collection=db.getCollection("tree");
@@ -76,7 +75,7 @@ private static final Logger log=Logger.getLogger(ResumeProject.class);
 		System.out.println(m.getMaxBsonObjectSize());*/
 		
 		}catch(Exception io){
-			
+			   
 			log.info("Resume loggerMongoInstance has issues");
 		}
 	}

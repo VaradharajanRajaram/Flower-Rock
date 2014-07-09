@@ -1,3 +1,12 @@
+/**
+ * 
+Coded By: Varadharajan Rajaram
+
+Coded Date: Jul 9, 2014 
+
+Coded Time: 7:20:02 AM
+
+ */
 package com.vail.foodcourt.service;
 
 import java.util.Properties;
@@ -5,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
 
-import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
 import com.mongodb.WriteConcern;
 
 public class DbPrerequisite  {
@@ -24,7 +33,7 @@ public class DbPrerequisite  {
 	static final AtomicInteger initCount = new AtomicInteger(0);
 	  /** The default write concern for the test. */
 	 static WriteConcern writeConcern;
-	 public static Mongo mongo;
+	 public static MongoClient mongo;
 	 public static String WRITECONCERNTYPE;
 	 
 	 public static Integer MAXCONNECTIONS;
