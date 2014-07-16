@@ -9,8 +9,14 @@ Coded Time: 7:20:02 AM
  */
 package com.vail.foodcourt.dto;
 
-public class CstmrAddress {
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
+public class CstmrAddress {
+	@Indexed
+	private int cstmrId;
+	
 	private String Name;
 
 	private int phoneNumber;

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
+import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -21,7 +22,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.json.JSONObject;
 
 public final class TemplateMethods {
-
+	private static final Logger log=Logger.getLogger(new Object() { }.getClass().getSimpleName());
 	@SuppressWarnings("unused")
 	private static final String getExtension(final String filename) {
 		if (filename == null)
@@ -75,8 +76,9 @@ public final class TemplateMethods {
 	}
 
 	public static JSONObject extractExcelContentByColumnIndex(int columnIndex,
-			HashMap<String, String> foodMnuMap) {
+			HashMap<String, String> foodMnuMap,File uploadedFile) {
 		ArrayList<String> columndata = null;
+		File f=null;
 		JSONObject foodMenuJson = new JSONObject();
 		try {
 			List<String> arrayKeyPool = new ArrayList<String>();
@@ -90,7 +92,12 @@ public final class TemplateMethods {
 			arrayKeyPool.add("itmDlvryChrge");
 			arrayKeyPool.add("itmPostedRstrntId");
 			arrayKeyPool.add("ItmDlvryTime");
-			File f = new File("D:/itemDatas.xls");
+			
+			if(uploadedFile.exists()){
+			 f = new File(uploadedFile.getAbsolutePath());
+			}else{
+				log.info("File is not in the folder..");
+			}
 			FileInputStream ios = new FileInputStream(f);
 			foodMnuMap = new HashMap<String, String>();
 			HSSFWorkbook workbook = new HSSFWorkbook(ios);

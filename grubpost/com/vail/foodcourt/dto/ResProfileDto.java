@@ -10,6 +10,7 @@ Coded Time: 7:20:02 AM
 package com.vail.foodcourt.dto;
 
 import java.util.ArrayList;
+
 import org.json.JSONObject;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -29,6 +30,8 @@ public class ResProfileDto {
 	private ArrayList<String> resFoodType;
 	
 	private int resSince;
+	
+	
 	/**
 	 * @return the resName
 	 */

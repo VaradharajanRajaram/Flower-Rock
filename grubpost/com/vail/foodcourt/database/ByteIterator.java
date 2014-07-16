@@ -3,7 +3,6 @@
 
 
 import java.util.Iterator;
-import java.util.ArrayList;
 
 public abstract class ByteIterator implements Iterator<Byte> {
 

@@ -12,7 +12,8 @@ public class RedirctionController {
     public String adminPage() {
         System.out.println("-()-()-()-()-()-()-()-(\"STARTUP\")-()-()-()-()-()-()-()");
        System.out.println(msg);
-        return "uploadExcel";
+      // return  "innAdminPage";
+       return "uploadExcel";
     }
 
     @RequestMapping(value = "/revealCibos")

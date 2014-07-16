@@ -7,12 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="upload-excel" method="post">
-
-		<input type="file" name="excelFile" id="excelFile"> <input
-			type="text" name="userName" id="userName"> <input
-			type="submit">
-
+	<form action="upload-excel-file"  enctype="multipart/form-data"  method="post">
+		<input type="file" name="excel" id="excel" > 
+		<input type="text" name="userName" id="userName"> 
+		<input type="submit">
 	</form>
 </body>
 </html>

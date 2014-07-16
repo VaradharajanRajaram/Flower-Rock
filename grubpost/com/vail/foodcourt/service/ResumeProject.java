@@ -1,6 +1,7 @@
 package com.vail.foodcourt.service;
 
 import java.io.File;
+import java.util.Date;
 import java.util.Properties;
 
 import javax.servlet.ServletConfig;
@@ -57,7 +58,7 @@ private static final Logger log=Logger.getLogger(ResumeProject.class);
 		logFilesProp.put("log4j.appender.R.File", GeneralConstants.$DB_LOG);
 		logFilesProp.put("log4j.appender.R.File", GeneralConstants.$RESUM_PROJECT_LOG);
 		PropertyConfigurator.configure(logFilesProp);
-		log.info("VARADHARAJAN RAJARAM");
+		log.info("LOGGER FILE CREATION STARTED TIME:"+new Date()+"");
 		
 		
 	}

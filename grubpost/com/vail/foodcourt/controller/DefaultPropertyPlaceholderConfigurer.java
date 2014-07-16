@@ -1,9 +1,9 @@
 package com.vail.foodcourt.controller;
 
 import java.io.IOException;
-import java.util.Properties;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
  
 public class DefaultPropertyPlaceholderConfigurer
         extends org.springframework.beans.factory.config.PropertyPlaceholderConfigurer

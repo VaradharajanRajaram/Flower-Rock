@@ -6,7 +6,7 @@ public class GeneralConstants {
     public static final String ALPHA_NUMERIC_STRING = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
 
     
-     public static final String foodCourtInstallPath="E:/foodCourtAppLogPath";
+    
     
 
         /** The Constant EMPTY_STRING. */
@@ -60,7 +60,8 @@ public class GeneralConstants {
         /** The Constant EXECUTION_LOGGER. */
         public static final String EXECUTION_LOGGER = "EXECUTION_LOGGER";
         
-        
+        public static final String foodCourtInstallPath=System.getenv("APPDATA")+FRONT_SLASH+"foodCourtAppLogPath";
+       
         public static final String $CORE_LOG=foodCourtInstallPath+FRONT_SLASH+"coreLog/core.log";
         		
         

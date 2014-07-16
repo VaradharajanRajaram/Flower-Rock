@@ -20,6 +20,11 @@
 			<load-on-startup>2</load-on-startup>
 		
 	</servlet>
+	
+<context-param>
+	<param-name>ExcelPath</param-name>
+	<param-value>C:\Tomcat 7.0\webapps\foodCourtExcel</param-value>
+</context-param>
   
 <!-- <welcome-file-list>
 <welcome-file>view/checkSpring.jsp</welcome-file>
